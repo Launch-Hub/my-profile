@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img,
+ion-icon,
+a,
+button,
+time,
+span {
+  display: block;
+}
+
+button {
+  font: inherit;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  background: none;
+  font: inherit;
+}
+
+.h2,
+.h3,
+.h4,
+.h5 {
+  color: var(--white2);
+  text-transform: capitalize;
+}
+
+.h2 {
+  font-size: var(--fs1);
+}
+.h3 {
+  font-size: var(--fs2);
+}
+.h4 {
+  font-size: var(--fs4);
+}
+.h5 {
+  font-size: var(--fs7);
+  font-weight: var(--fw500);
+}

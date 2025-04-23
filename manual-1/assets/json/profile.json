@@ -1,0 +1,38 @@
+{
+  "id": "4caf4216-a72a-4205-9177-5c073bad88f3",
+  "generalInfo": {
+    "name": "Nguyen Truong Giang",
+    "position": "Software Engineer",
+    "email": "giangntse150746@gmail.com",
+    "phone": "0838382196",
+    "dob": "2001-11-01T00:00:00.000Z",
+    "address": "299, st. Lien Phuong, Thu Duc city, HCMC",
+    "socialAddresses": [
+      {
+        "icon": "",
+        "name": "Github",
+        "url": "https://github.com/giangntse150746"
+      },
+      {
+        "icon": "",
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/mashimar-2001"
+      },
+      {
+        "icon": "",
+        "name": "Facebook",
+        "url": "https://www.facebook.com/giang0304"
+      }
+    ]
+  },
+  "about": {
+    "description": "I'm a Software Engineer with 4 years of expertise in front-end development and 2 years in back-end development, specializing in creating management system applications and designing dynamic responsive landing page websites.",
+    "workingFields": [
+      {
+        "name": "Web Development",
+        "description": "High-quality development of sites at the professional level.",
+        "icon": "https://i.postimg.cc/ZqgqrqzG/icon-dev.png"
+      }
+    ]
+  }
+}
