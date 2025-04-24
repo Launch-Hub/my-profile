@@ -1,3 +1,21 @@
+/* Map Data Dynamically */
+
+// const data = {
+// };
+
+// document.querySelectorAll("[data-key]").forEach(el => {
+//   const key = el.dataset.key;
+//   if (Array.isArray(data[key])) {
+//     data[key].forEach(val => {
+//       const li = document.createElement("li");
+//       li.textContent = val;
+//       el.appendChild(li);
+//     });
+//   } else {
+//     el.textContent = data[key];
+//   }
+// });
+
 /* Toggle Style Switcher */
 
 const styleSwitcherToggle = document.querySelector(".style-switcher-toggler");
@@ -64,11 +82,12 @@ const totalSection = allSection.length;
 
 for (let i = 0; i < totalNavList; i++) {
   const a = navList[i].querySelector("a");
+
   a.addEventListener("click", function () {
     removeBackSection();
     for (let j = 0; j < totalNavList; j++) {
       if (navList[j].querySelector("a").classList.contains("active")) {
-        addBackSection(j); /*allSection[j].classList.add('back-section');*/
+        addBackSection(j); // allSection[j].classList.add('back-section');
       }
       navList[j].querySelector("a").classList.remove("active");
     }
@@ -80,6 +99,11 @@ for (let i = 0; i < totalNavList; i++) {
     }
   });
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const preloadedSection = window.location.href.split("#")[1];
+  if (preloadedSection)
+    document.querySelector(`a[href="#${preloadedSection}"]`)?.click();
+});
 
 function addBackSection(num) {
   allSection[num].classList.add("back-section");
@@ -92,12 +116,23 @@ function removeBackSection() {
 }
 
 function showSection(element) {
+  // prettier-ignore
+  const lastActive = [...allSection].findIndex((e) => e.classList.contains("active"));
+
   for (let i = 0; i < totalSection; i++) {
     allSection[i].classList.remove("active");
+    allSection[i].classList.remove("slide-up");
+    allSection[i].classList.remove("slide-down");
   }
 
   const target = element.getAttribute("href").split("#")[1];
-  document.querySelector("#" + target).classList.add("active");
+  const newActive = document.querySelector("#" + target);
+
+  if (lastActive < [...allSection].findIndex((e) => e.id == target))
+    newActive.classList.add("slide-up");
+  else newActive.classList.add("slide-down");
+
+  newActive.classList.add("active");
 }
 
 function updateNav(element) {
@@ -112,14 +147,18 @@ function updateNav(element) {
     }
   }
 }
-
 document.querySelector(".hire-me").addEventListener("click", function () {
   const sectionIndex = this.getAttribute("data-section-index");
-  /*console.log(sectionIndex);*/
+
   showSection(this);
   updateNav(this);
   removeBackSection();
   addBackSection(sectionIndex);
+
+  setTimeout(() => {
+    const container = document.querySelector(".section.active");
+    container.scrollBy({ top: 160, behavior: 'smooth' });
+  }, 400);
 });
 
 /* Activating Mobile Menu */

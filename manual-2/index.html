@@ -38,30 +38,37 @@
     </div>
 
     <div class="main-content">
-      <section class="home section active" id="home">
+      <section id="home" class="section home active">
         <div class="container">
           <div class="row">
             <div class="home-info px-4">
-              <h3 class="hello">Hello, my name is <span class="name">Truong Giang Nguyen</span></h3>
+              <h3 class="hello">
+                Hello, my name is <span data-key="fullName" class="name">Truong Giang Nguyen</span>
+              </h3>
               <h3 class="profession">I'm a <span class="typing">&nbsp;</span></h3>
-              <p class="text-justify">
+              <p data-key="overview" class="text-justify">
                 I'm a software engineer with 4 years of hands-on experience building
                 and maintaining scalable web and mobile applications, including
                 front-end development, UI/UX design, and system integration.
               </p>
-              <a href="#" class="btn ">Download CV</a>
+              <!-- <a href="https://drive.google.com/file/d/1MgyzAOLcQHMAjnOgvrtqsqavRYZSUKs9/view?usp=drive_link" -->
+              <!-- Download link structure: https://drive.usercontent.google.com/uc?id=<file_id>&export=download -->
+              <a data-key="resumeDownlink" class="btn"
+                href="https://drive.usercontent.google.com/uc?id=1MgyzAOLcQHMAjnOgvrtqsqavRYZSUKs9&export=download">
+                Download CV
+              </a>
             </div>
 
             <div class="home-img px-4">
               <div class="img-container">
-                <img src="assets/images/me_work.jpg" alt="hero image" class="object-cover">
+                <img data-key="profileImage" src="assets/images/me_work.jpg" alt="hero image" class="object-cover">
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="about section " id="about">
+      <section id="about" class="section about">
         <div class="container">
           <div class="row">
             <div class="section-title px-4">
@@ -262,7 +269,7 @@
         </div>
       </section>
 
-      <section class="service section " id="services">
+      <section id="services" class="section service">
         <div class="container">
           <div class="row">
             <div class="section-title px-4">
@@ -338,7 +345,7 @@
         </div>
       </section>
 
-      <section class="portfolio section " id="portfolio">
+      <section id="portfolio" class="section portfolio">
         <div class="container">
           <div class="row">
             <div class="section-title px-4">
@@ -404,7 +411,7 @@
         </div>
       </section>
 
-      <section class="contact section" id="contact">
+      <section id="contact" class="section contact">
         <div class="container">
           <div class="row">
             <div class="section-title px-4">
@@ -412,33 +419,33 @@
             </div>
           </div>
 
-          <h3 class="contact-title px-4">Any Question? Contact us!</h3>
+          <h3 class="contact-title px-4">Any Question? Contact me!</h3>
           <h4 class="contact-subtitle px-4">I'm at your service</h4>
 
           <div class="row">
             <div class="contact-info-item px-4">
               <div class="icon"><i class="fa fa-phone"></i></div>
-              <h4>Call us on</h4>
-              <p>+92 333 054 5218</p>
+              <h4>Call me on</h4>
+              <p>+84 838 382 196</p>
             </div>
 
 
             <div class="contact-info-item px-4">
               <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
               <h4>Office</h4>
-              <p>São Paulo</p>
+              <p>Ho Chi Minh</p>
             </div>
 
             <div class="contact-info-item px-4">
               <div class="icon"><i class="fa fa-envelope"></i></div>
               <h4>Email</h4>
-              <p>info@gmail.com</p>
+              <p>giangntse150746@gmail.com</p>
             </div>
 
             <div class="contact-info-item px-4">
               <div class="icon"><i class="fa fa-globe"></i></div>
               <h4>Website</h4>
-              <p>www.domain.com</p>
+              <p>www.giangnt-dev.netlify.app</p>
             </div>
           </div>
           <h3 class="contact-title px-4">Send me an email</h3>
@@ -496,7 +503,7 @@
     </div>
 
     <div class="day-night s-icon">
-      <i class="fas "></i>
+      <i class="fas"></i>
     </div>
 
     <h4>Theme Colors</h4>

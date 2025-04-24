@@ -10,7 +10,33 @@
   --skin-color: #ec1839;
 }
 
-/* Scroll bar */
+body.dark {
+  --bg-black900: #151515;
+  --bg-black100: #222222;
+  --bg-black50: #393939;
+  --text-black900: #ffffff;
+  --text-black700: #e9e9e9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+/* SCROLLBAR */
+
 ::-webkit-scrollbar {
   background-color: #fefefe;
   border-radius: 8rem;
@@ -27,4 +53,55 @@
   background-color: var(--text-black900);
   box-shadow: inset 0 0 3px rgba(var(--text-black700), 0.36);
   -webkit-box-shadow: inset 0 0 3px rgba(var(--text-black900), 0.36);
+}
+
+/* @KEYFRAMES */
+/* Use ease if someone complains that it's straining on their eyes */
+
+.slide-right {
+  animation: slideRight 1s cubic-bezier(0.375, 0.112, 0.42, 1.23);
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.slide-left {
+  animation: slideLeft 1s cubic-bezier(0.375, 0.112, 0.42, 1.23);
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.slide-up {
+  animation: slideUp 1s cubic-bezier(0.375, 0.112, 0.42, 1.23);
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.slide-down {
+  animation: slideDown 1s cubic-bezier(0.375, 0.112, 0.42, 1.23);
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
