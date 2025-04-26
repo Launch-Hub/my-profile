@@ -1,21 +1,3 @@
-/* Map Data Dynamically */
-
-// const data = {
-// };
-
-// document.querySelectorAll("[data-key]").forEach(el => {
-//   const key = el.dataset.key;
-//   if (Array.isArray(data[key])) {
-//     data[key].forEach(val => {
-//       const li = document.createElement("li");
-//       li.textContent = val;
-//       el.appendChild(li);
-//     });
-//   } else {
-//     el.textContent = data[key];
-//   }
-// });
-
 /* Toggle Style Switcher */
 
 const styleSwitcherToggle = document.querySelector(".style-switcher-toggler");
@@ -101,8 +83,7 @@ for (let i = 0; i < totalNavList; i++) {
 }
 document.addEventListener("DOMContentLoaded", function () {
   const preloadedSection = window.location.href.split("#")[1];
-  if (preloadedSection)
-    document.querySelector(`a[href="#${preloadedSection}"]`)?.click();
+  if (preloadedSection) document.querySelector(`a[href="#${preloadedSection}"]`)?.click();
 });
 
 function addBackSection(num) {
@@ -139,14 +120,21 @@ function updateNav(element) {
   for (let i = 0; i < totalNavList; i++) {
     navList[i].querySelector("a").classList.remove("active");
     const target = element.getAttribute("href").split("#")[1];
-    if (
-      target ===
-      navList[i].querySelector("a").getAttribute("href").split("#")[1]
-    ) {
+    if (target === navList[i].querySelector("a").getAttribute("href").split("#")[1]) {
       navList[i].querySelector("a").classList.add("active");
     }
   }
 }
+
+document.querySelector("#homeLogo").addEventListener("click", function () {
+  const sectionIndex = [...allSection].findIndex((e) => e.classList.contains("active"));
+
+  showSection(this);
+  updateNav(this);
+  removeBackSection();
+  addBackSection(sectionIndex);
+});
+
 document.querySelector(".hire-me").addEventListener("click", function () {
   const sectionIndex = this.getAttribute("data-section-index");
 
@@ -157,7 +145,7 @@ document.querySelector(".hire-me").addEventListener("click", function () {
 
   setTimeout(() => {
     const container = document.querySelector(".section.active");
-    container.scrollBy({ top: 160, behavior: 'smooth' });
+    container.scrollBy({ top: 160, behavior: "smooth" });
   }, 400);
 });
 
