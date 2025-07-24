@@ -126,6 +126,8 @@ function updateNav(element) {
   }
 }
 
+/* Handle buttons click */
+
 document.querySelector("#homeLogo").addEventListener("click", function () {
   const sectionIndex = [...allSection].findIndex((e) => e.classList.contains("active"));
 
@@ -148,6 +150,69 @@ document.querySelector(".hire-me").addEventListener("click", function () {
     container.scrollBy({ top: 160, behavior: "smooth" });
   }, 400);
 });
+
+/* Handle scroll */
+let lastScrollTop = 0;
+
+function getScrollDirection() {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const direction = scrollTop > lastScrollTop ? 'down' : 'up';
+  lastScrollTop = scrollTop;
+  return direction;
+}
+
+function getCurrentSection() {
+  const scrollPosition = window.scrollY + 100; // Offset for better detection
+  
+  for (let i = 0; i < totalSection; i++) {
+    const section = allSection[i];
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    
+    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      return section;
+    }
+  }
+  
+  return allSection[0]; // Default to first section
+}
+
+document.addEventListener("scroll", function () {
+  const scrollDirection = getScrollDirection();
+  const currentSection = getCurrentSection();
+  const currentSectionIndex = [...allSection].findIndex((e) => e.id === currentSection.id);
+  
+  // Update navigation based on current section
+  for (let i = 0; i < totalNavList; i++) {
+    const navLink = navList[i].querySelector("a");
+    const targetSection = navLink.getAttribute("href").split("#")[1];
+    
+    if (targetSection === currentSection.id) {
+      navLink.classList.add("active");
+    } else {
+      navLink.classList.remove("active");
+    }
+  }
+  
+  // Update section visibility
+  for (let i = 0; i < totalSection; i++) {
+    allSection[i].classList.remove("active");
+    allSection[i].classList.remove("slide-up");
+    allSection[i].classList.remove("slide-down");
+  }
+  
+  // Add appropriate animation based on scroll direction
+  if (scrollDirection === 'down') {
+    currentSection.classList.add("slide-up");
+  } else {
+    currentSection.classList.add("slide-down");
+  }
+  
+  currentSection.classList.add("active");
+  removeBackSection();
+  addBackSection(currentSectionIndex);
+});
+
 
 /* Activating Mobile Menu */
 

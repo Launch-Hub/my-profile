@@ -136,7 +136,7 @@ section .container {
   letter-spacing: 5px;
   position: relative;
 }
-.aside .logo a::before {
+/* .aside .logo a::before {
   content: "";
   position: absolute;
   width: 20px;
@@ -155,16 +155,20 @@ section .container {
   border-right: 5px solid var(--skin-color);
   top: 0;
   right: 0;
-}
+} */
 .aside .logo a span {
-  font-family: "Clicker Script", cursive;
-  font-size: 40px;
+  /* font-family: "Clicker Script", cursive;
+  font-size: 40px; */
+  color: var(--skin-color);
 }
 .aside .nav {
   margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 .aside .nav li {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   display: block;
 }
 .aside .nav li a {
@@ -551,14 +555,27 @@ h3.profession {
   margin-bottom: 30px;
 }
 .portfolio .portfolio-item-inner {
-  border: 6px solid var(--bg-black100);
-  border-radius: 10px;
+  border: 6px solid var(--bg-black50);
+  border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
+}
+.portfolio .portfolio-item-inner {
+  transition: all 0.48s ease;
+}
+.portfolio .portfolio-item-inner:hover {
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.42);
+  transform: translateY(-16px);
+  transition: all 0.42s ease;
 }
 .portfolio .portfolio-item-inner .portfolio-img img {
   width: 100%;
   display: block;
+  transition: all 0.3s ease;
+}
+.portfolio .portfolio-item-inner .portfolio-img:hover img {
+  transform: scale(1.05);
+  transition: all 0.36s ease;
 }
 
 /* CONTACT */

@@ -15,9 +15,9 @@
   section {
     left: 0;
   }
-  section.open {
+  /* section.open {
     left: 270px;
-  }
+  } */
   section .container {
     padding-top: 70px;
   }
