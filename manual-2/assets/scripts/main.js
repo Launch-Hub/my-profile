@@ -81,6 +81,7 @@ for (let i = 0; i < totalNavList; i++) {
     }
   });
 }
+// load the specific section from URL
 document.addEventListener("DOMContentLoaded", function () {
   const preloadedSection = window.location.href.split("#")[1];
   if (preloadedSection) document.querySelector(`a[href="#${preloadedSection}"]`)?.click();

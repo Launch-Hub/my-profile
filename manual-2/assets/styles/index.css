@@ -1,4 +1,7 @@
 @import url(root.css);
+:root {
+  scroll-behavior: smooth;
+}
 
 body {
   line-height: 1.5;
@@ -278,16 +281,6 @@ h3.profession {
   text-align: center;
   position: relative;
 }
-.home-img::after {
-  content: "";
-  position: absolute;
-  border-bottom: 10px solid var(--skin-color);
-  border-right: 10px solid var(--skin-color);
-  height: 80px;
-  width: 80px;
-  right: 0;
-  bottom: -40px;
-}
 .home-img::before {
   content: "";
   position: absolute;
@@ -295,8 +288,18 @@ h3.profession {
   border-left: 10px solid var(--skin-color);
   height: 80px;
   width: 80px;
-  top: -40px;
-  left: 0;
+  top: -60px;
+  left: 20px;
+}
+.home-img::after {
+  content: "";
+  position: absolute;
+  border-bottom: 10px solid var(--skin-color);
+  border-right: 10px solid var(--skin-color);
+  height: 80px;
+  width: 80px;
+  right: 20px;
+  bottom: -60px;
 }
 .home .home-img .img-container {
   /* translate: -2rem 0; */
@@ -657,4 +660,8 @@ h3.profession {
   padding: 0 50px;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
+}
+.contact .contact-form .msg-error {
+  color: #d90d0d;
+  width: 100%;
 }

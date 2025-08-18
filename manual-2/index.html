@@ -6,15 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GiangNT | Profile</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
   <link rel="stylesheet" href="assets/styles/index.css">
   <link rel="stylesheet" href="assets/styles/theme.css">
   <link rel="stylesheet" href="assets/styles/responsive.css">
+
   <link rel="stylesheet" href="assets/styles/themes/color-1.css" class="alternate-style" title="color-1" disabled>
   <link rel="stylesheet" href="assets/styles/themes/color-2.css" class="alternate-style" title="color-2" disabled>
   <link rel="stylesheet" href="assets/styles/themes/color-3.css" class="alternate-style" title="color-3" disabled>
   <link rel="stylesheet" href="assets/styles/themes/color-4.css" class="alternate-style" title="color-4" disabled>
   <link rel="stylesheet" href="assets/styles/themes/color-5.css" class="alternate-style" title="color-5">
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </head>
 
 <body class="dark">
@@ -95,16 +98,16 @@
               <div class="row">
                 <div class="personal-info px-4">
                   <div class="row">
-                    <div class="info-item px-4">
+                    <!-- <div class="info-item px-4">
                       <p>Birthday: <span>01 Nov 2001</span></p>
                     </div>
 
                     <div class="info-item px-4">
                       <p>Age: <span>24</span></p>
-                    </div>
+                    </div> -->
 
                     <div class="info-item px-4">
-                      <p>Website: <span>giangnt-dev.netlify.app</span></p>
+                      <p>Website: <span>giangnt.info.vn</span></p>
                     </div>
 
                     <div class="info-item px-4">
@@ -139,8 +142,9 @@
                     <div class="skill-item px-4">
                       <h5>CSS/Tailwind</h5>
                       <div class="progress">
-                        <div class="progress-in" style="width: 90%;"></div>
-                        <div class="skill-percent">90%</div>
+                        <div class="progress-in" style="width: 92%;"></div>
+                        <!-- <div class="skill-percent">92%</div> -->
+                        <!-- <div class="skill-percent">Advanced</div> -->
                       </div>
                     </div>
 
@@ -148,7 +152,8 @@
                       <h5>NUXT</h5>
                       <div class="progress">
                         <div class="progress-in" style="width: 90%;"></div>
-                        <div class="skill-percent">90%</div>
+                        <!-- <div class="skill-percent">90%</div> -->
+                        <!-- <div class="skill-percent">Advanced</div> -->
                       </div>
                     </div>
 
@@ -156,7 +161,8 @@
                       <h5>REACT</h5>
                       <div class="progress">
                         <div class="progress-in" style="width: 84%;"></div>
-                        <div class="skill-percent">84%</div>
+                        <!-- <div class="skill-percent">84%</div> -->
+                        <!-- <div class="skill-percent">Intermediate</div> -->
                       </div>
                     </div>
 
@@ -164,7 +170,8 @@
                       <h5>ANGULAR</h5>
                       <div class="progress">
                         <div class="progress-in" style="width: 80%;"></div>
-                        <div class="skill-percent">80%</div>
+                        <!-- <div class="skill-percent">80%</div> -->
+                        <!-- <div class="skill-percent">Intermediate</div> -->
                       </div>
                     </div>
 
@@ -172,7 +179,8 @@
                       <h5>.NET</h5>
                       <div class="progress">
                         <div class="progress-in" style="width: 70%;"></div>
-                        <div class="skill-percent">70%</div>
+                        <!-- <div class="skill-percent">70%</div> -->
+                        <!-- <div class="skill-percent">Intermediate</div> -->
                       </div>
                     </div>
                   </div>
@@ -413,7 +421,7 @@
             <div class="contact-info-item px-4">
               <div class="icon"><i class="fa fa-globe"></i></div>
               <h4>Website</h4>
-              <p>giangnt-dev.netlify.app</p>
+              <p>giangnt.info.vn</p>
             </div>
 
             <div class="contact-info-item px-4">
@@ -444,12 +452,14 @@
                 <div class="form-item col-6 px-4">
                   <div class="form-group">
                     <input name="requester" type="text" class="form-control" placeholder="Name">
+                    <span class="msg-error requester"></span>
                   </div>
                 </div>
 
                 <div class="form-item col-6 px-4">
                   <div class="form-group">
                     <input name="email" type="email" class="form-control" placeholder="Email">
+                    <span class="msg-error email"></span>
                   </div>
                 </div>
               </div>
@@ -458,6 +468,7 @@
                 <div class="form-item col-12 px-4">
                   <div class="form-group">
                     <input name="subject" type="text" class="form-control" placeholder="Subject">
+                    <span class="msg-error subject"></span>
                   </div>
                 </div>
               </div>
@@ -465,7 +476,8 @@
               <div class="row">
                 <div class="form-item col-12 px-4">
                   <div class="form-group">
-                    <textarea name="message" id="message" class="form-control" placeholder="Message"></textarea>
+                    <textarea name="message" id="message" class="form-control" placeholder="Message" required></textarea>
+                    <span class="msg-error message"></span>
                   </div>
                 </div>
               </div>
