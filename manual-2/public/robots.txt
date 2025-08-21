@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap location (uncomment and update when you have a sitemap)
+# Sitemap: https://yourdomain.com/sitemap.xml
+
+# Disallow crawling of specific directories (uncomment if needed)
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: /temp/
+
+# Crawl delay (optional - uncomment if you want to limit crawl rate)
+# Crawl-delay: 1
